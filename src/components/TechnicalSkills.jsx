@@ -18,15 +18,15 @@ const TechnicalSkills = () => {
     const duplicatedTechnologies = [...technologies, ...technologies];
 
     return (
-        <section className="w-full px-8 py-16 text-center overflow-hidden bg-white dark:bg-black transition-colors duration-300 relative">
+        <section className="w-full px-4 sm:px-8 py-12 sm:py-16 text-center overflow-hidden bg-white dark:bg-black transition-colors duration-300 relative">
             {/* Starfield effect for dark mode */}
             <div className="absolute inset-0 opacity-30 dark:opacity-100 pointer-events-none">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgb(34,197,94)_1px,transparent_0)] [background-size:32px_32px] dark:block hidden"></div>
             </div>
             
             <div className="relative z-10">
-                <h2 className="text-4xl font-bold text-black dark:text-white mb-2 transition-colors">Technical Skills</h2>
-                <p className="text-black dark:text-white text-lg mb-8 transition-colors">Technologies I work with</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-black dark:text-white mb-2 transition-colors">Technical Skills</h2>
+                <p className="text-black dark:text-white text-base sm:text-lg mb-6 sm:mb-8 transition-colors">Technologies I work with</p>
                 
                 {/* Infinite Carousel Container */}
                 <div className="relative w-full overflow-hidden">

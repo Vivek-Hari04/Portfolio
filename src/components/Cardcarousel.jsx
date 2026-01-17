@@ -59,50 +59,52 @@ const Cardcarousel = () => {
     const visibleCards = getVisibleCards();
 
     return (
-        <section id="projects" className="w-full px-8 py-16 bg-white dark:bg-black transition-colors duration-300">
+        <section id="projects" className="w-full px-4 sm:px-8 py-12 sm:py-16 bg-white dark:bg-black transition-colors duration-300">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-700 dark:text-white mb-2 transition-colors">Featured Projects</h2>
-                    <p className="text-gray-500 dark:text-gray-300 text-lg transition-colors">Some of my recent work</p>
+                <div className="text-center mb-8 sm:mb-12">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-gray-700 dark:text-white mb-2 transition-colors">Featured Projects</h2>
+                    <p className="text-gray-500 dark:text-gray-300 text-base sm:text-lg transition-colors">Some of my recent work</p>
                 </div>
 
                 <div className="relative">
                     {/* Navigation Arrows */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-black rounded-full p-3 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-all border border-gray-200 dark:border-gray-700"
+                        className="absolute left-0 sm:left-2 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-black rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-all border border-gray-200 dark:border-gray-700"
                         aria-label="Previous slide"
                     >
-                        <svg className="w-6 h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
 
                     <button
                         onClick={nextSlide}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-black rounded-full p-3 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-all border border-gray-200 dark:border-gray-700"
+                        className="absolute right-0 sm:right-2 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-black rounded-full p-2 sm:p-3 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-all border border-gray-200 dark:border-gray-700"
                         aria-label="Next slide"
                     >
-                        <svg className="w-6 h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
 
                     {/* Carousel Container */}
-                    <div className="flex items-center justify-center gap-6 px-12 overflow-hidden">
+                    <div className="flex items-center justify-center gap-4 sm:gap-6 px-8 sm:px-12 md:px-16 overflow-hidden">
                         {visibleCards.map((project, idx) => {
                             const isCenter = project.position === 0;
                             return (
                                 <div
                                     key={`${project.id}-${idx}`}
                                     className={`flex-shrink-0 transition-all duration-500 ease-in-out ${
-                                        isCenter ? 'w-full max-w-md scale-100 opacity-100 z-10' : 'w-80 scale-90 opacity-70 z-0'
+                                        isCenter 
+                                            ? 'w-full max-w-sm sm:max-w-md scale-100 opacity-100 z-10' 
+                                            : 'hidden sm:block w-60 sm:w-80 scale-90 opacity-70 z-0'
                                     }`}
                                 >
                                     <div className="bg-white dark:bg-black rounded-xl shadow-lg overflow-hidden h-full border border-gray-100 dark:border-gray-800 hover:shadow-xl transition-shadow">
                                         {/* Project Image */}
-                                        <div className="w-full h-56 bg-gray-200 dark:bg-gray-900 overflow-hidden">
+                                        <div className="w-full h-48 sm:h-56 bg-gray-200 dark:bg-gray-900 overflow-hidden">
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
@@ -111,20 +113,20 @@ const Cardcarousel = () => {
                                         </div>
 
                                         {/* Card Content */}
-                                        <div className="p-6">
-                                            <h3 className="text-2xl font-bold text-gray-700 dark:text-white mb-3 transition-colors">
+                                        <div className="p-4 sm:p-6">
+                                            <h3 className="text-xl sm:text-2xl font-bold text-gray-700 dark:text-white mb-2 sm:mb-3 transition-colors">
                                                 {project.title}
                                             </h3>
-                                            <p className="text-gray-500 dark:text-gray-300 mb-6 leading-relaxed text-sm transition-colors">
+                                            <p className="text-gray-500 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed text-xs sm:text-sm transition-colors">
                                                 {project.description}
                                             </p>
 
                                             {/* Technology Tags */}
-                                            <div className="flex flex-wrap gap-2 mb-6">
+                                            <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                                                 {project.technologies.map((tech, techIdx) => (
                                                     <span
                                                         key={techIdx}
-                                                        className="px-3 py-1.5 bg-green-50 dark:bg-black text-green-600 dark:text-green-400 rounded-full text-xs font-medium border border-green-100 dark:border-green-400 transition-colors"
+                                                        className="px-2 sm:px-3 py-1 sm:py-1.5 bg-green-50 dark:bg-black text-green-600 dark:text-green-400 rounded-full text-xs font-medium border border-green-100 dark:border-green-400 transition-colors"
                                                     >
                                                         {tech}
                                                     </span>
@@ -132,7 +134,7 @@ const Cardcarousel = () => {
                                             </div>
 
                                             {/* Action Buttons */}
-                                            <div className="flex gap-3">
+                                            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                                                 <a
                                                     href={project.githubUrl}
                                                     target="_blank"

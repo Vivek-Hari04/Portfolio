@@ -3,12 +3,12 @@ import profilePic from '../assets/Pic.png';
 
 const Profile = () => {
     return (
-        <section className="w-full px-8 py-12 flex items-center justify-between gap-12 bg-white dark:bg-black transition-colors duration-300">
+        <section className="w-full px-4 sm:px-8 py-8 sm:py-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 bg-white dark:bg-black transition-colors duration-300">
             {/* Left Side - Profile Picture with Background Text */}
-            <div className="relative flex-1 h-[500px] flex items-center justify-center">
+            <div className="relative flex-1 w-full lg:w-auto h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center">
                 {/* Background Text */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-gray-300 dark:text-gray-800 font-bold text-8xl tracking-wider transform -rotate-90 whitespace-nowrap transition-colors">
+                    <span className="text-gray-300 dark:text-gray-800 font-bold text-4xl sm:text-6xl lg:text-8xl tracking-wider transform -rotate-90 whitespace-nowrap transition-colors">
                         Vivek
                     </span>
                 </div>
@@ -17,22 +17,22 @@ const Profile = () => {
                     <img
                         src={profilePic}
                         alt="Vivek Hari"
-                        className="w-[450px] h-[450px] rounded-full object-cover border-4 border-white shadow-xl"
+                        className="w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[450px] lg:h-[450px] rounded-full object-cover border-4 border-white shadow-xl"
                     />
                 </div>
             </div>
 
             {/* Right Side - Profile Content */}
-            <div className="flex-1 max-w-2xl">
-                <p className="text-black dark:text-white text-lg mb-2 transition-colors">Hello, I'm</p>
-                <h1 className="text-6xl font-bold text-black dark:text-white mb-4 transition-colors">Vivek Hari</h1>
-                <p className="text-black dark:text-white text-xl mb-6 transition-colors">Computer Engineering Student</p>
-                <p className="text-black dark:text-white mb-8 leading-relaxed transition-colors">
+            <div className="flex-1 w-full lg:max-w-2xl text-center lg:text-left">
+                <p className="text-black dark:text-white text-base sm:text-lg mb-2 transition-colors">Hello, I'm</p>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-4 transition-colors">Vivek Hari</h1>
+                <p className="text-black dark:text-white text-lg sm:text-xl mb-6 transition-colors">Computer Engineering Student</p>
+                <p className="text-black dark:text-white mb-8 leading-relaxed text-sm sm:text-base transition-colors">
                     Aspiring B.Tech student passionate about building innovative solutions and exploring the intersection of hardware and software.
                 </p>
 
                 {/* Call-to-Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                     <a
                         href="#projects"
                         className="flex items-center justify-center gap-2 px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors font-medium shadow-sm hover:shadow-md"
